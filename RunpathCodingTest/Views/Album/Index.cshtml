@@ -1,0 +1,21 @@
+﻿@model IEnumerable<AlbumViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@if (Model != null && Model.Count() > 0)
+{
+    foreach (var album in Model)
+    {
+        // Create the list of these clients
+<div>
+    <div>@album.Id</div>
+    <div>@album.Title</div>
+    @foreach (var photo in album.Photos)
+            {
+    <img src="@photo.ThumbnailUrl" alt="@photo.Title">
+            }
+</div>
+    }
+}

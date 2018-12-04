@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@if (Model != null)
+{
+    foreach (var userId in Model)
+    {
+    <div>
+      UserId :  <a href="/album/user/@userId">@userId</a>
+    </div>
+    }
+}
